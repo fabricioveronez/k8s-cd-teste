@@ -1,0 +1,10 @@
+name: Remote-CD
+on:
+  repository_dispatch:
+    types: [remote-cd-test]
+jobs:
+    deploy-kubernetes-outro-repo:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Obtendo o código
+              run: echo "${{ github.event.client_payload.parametro_teste }}"
